@@ -19,9 +19,32 @@ public class NameToHeight {
 	 */
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
+		Map heights = new HashMap();
+		heights.put("Ke", "5'8");
+		heights.put("Pedzo", "5'8");
+		
+		System.out.println("Name: ");
 
-		// FIXME
-		throw new NotYetImplementedException();
+		String name = in.next();
+		
+		
+		while (name.equals("quit") == false) {
+			
+			if (name.equals(null)) {
+				System.out.println("Input is null!\n");
+			} else if (!heights.containsKey(name)) {         // name not in heights
+				System.out.println("Name not found!\n");
+			} else {
+				System.out.println(name + ": " + heights.get(name) + "\n");
+			}
+			
+			
+			System.out.println("Name: ");
+			System.out.println();
+			name = in.next();
+			
+		}
 
+		
 	}
 }
